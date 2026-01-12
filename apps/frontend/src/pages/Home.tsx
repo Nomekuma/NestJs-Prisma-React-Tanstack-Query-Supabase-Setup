@@ -1,6 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import reactLogo from '../assets/react.svg';
 import viteLogo from '/vite.svg';
+import { useTask } from '@/api/hooks/example.useTask.ts/useTask';
 
 // Example API functions
 const fetchCount = async (): Promise<number> => {
@@ -17,6 +18,8 @@ const incrementCount = async (currentCount: number): Promise<number> => {
 
 export default function Home() {
   const queryClient = useQueryClient();
+  const { data: tasks } = useTask();
+  console.log('Tasks from API:', tasks); // Log the fetched tasks
 
   // Fetch data with useQuery
   const {
@@ -45,7 +48,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center overflow-y-auto">
       <div className="flex gap-8 mb-8">
         <a href="https://vite.dev" target="_blank" className="hover:opacity-80 transition-opacity">
           <img src={viteLogo} className="h-24 w-24" alt="Vite logo" />
@@ -66,7 +69,7 @@ export default function Home() {
         </a>
       </div>
       <h1 className="text-5xl font-bold mb-8">Vite + React + TanStack Query</h1>
-      <div className="bg-gray-800 ">
+      <div className="bg-gray-800 max-w-md w-full p-8 rounded-lg shadow-lg text-center">
         {isLoading ? (
           <p className="text-blue-400 mb-4">Loading count...</p>
         ) : isError ? (
@@ -82,6 +85,9 @@ export default function Home() {
             </button>
           </>
         )}
+        <pre className="mt-4 text-left text-sm bg-gray-900 p-3 rounded overflow-x-auto max-h-64">
+          {tasks ? JSON.stringify(tasks, null, 2) : 'Loading tasks...'}
+        </pre>
       </div>
     </div>
   );
