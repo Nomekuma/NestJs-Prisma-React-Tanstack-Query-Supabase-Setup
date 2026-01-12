@@ -19,7 +19,7 @@ const incrementCount = async (currentCount: number): Promise<number> => {
 export default function Home() {
   const queryClient = useQueryClient();
   const { data: tasks } = useTask();
-  console.log('Tasks from API:', tasks); // Log the fetched tasks
+  console.log('Tasks from API:', tasks?.tasks); // Log the fetched tasks
 
   // Fetch data with useQuery
   const {
@@ -86,7 +86,7 @@ export default function Home() {
           </>
         )}
         <pre className="mt-4 text-left text-sm bg-gray-900 p-3 rounded overflow-x-auto max-h-64">
-          {tasks ? JSON.stringify(tasks, null, 2) : 'Loading tasks...'}
+          {tasks ? JSON.stringify(tasks.tasks, null, 2) : 'Loading tasks...'}
         </pre>
       </div>
     </div>
