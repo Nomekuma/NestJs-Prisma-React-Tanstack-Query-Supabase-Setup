@@ -20,9 +20,11 @@
   "packageManager": "pnpm@10.27.0",
   "dependencies": {
     "@nestjs/common": "^11.1.11",
+    "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.1.11",
     "@nestjs/platform-express": "^11.1.11",
     "@prisma/client": "^7.2.0",
+    "@supabase/supabase-js": "^2.90.1",
     "reflect-metadata": "~0.2.2",
     "rxjs": "^7.8.1"
   },
