@@ -7,7 +7,7 @@
     "apps/*"
   ],
   "scripts": {
-    "dev": "concurrently -n frontend,backend -c cyan,green \"pnpm --filter frontend dev\" \"pnpm --filter backend dev\"",
+    "dev": "turbo dev",
     "dev:turbo": "turbo dev",
     "build": "turbo build",
     "lint": "turbo lint",
@@ -23,7 +23,6 @@
   "license": "ISC",
   "packageManager": "pnpm@10.27.0",
   "devDependencies": {
-    "concurrently": "^9.2.1",
     "prettier": "^3.4.2",
     "turbo": "^2.7.3"
   },
