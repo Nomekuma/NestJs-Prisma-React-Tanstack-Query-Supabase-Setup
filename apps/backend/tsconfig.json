@@ -12,9 +12,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./",
-    "baseUrl": "./",
     "skipLibCheck": true,
     "incremental": true,
-    "ignoreDeprecations": "6.0"
   }
 }

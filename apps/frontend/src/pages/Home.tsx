@@ -1,5 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import reactLogo from '../assets/react.svg';
+import tanstack from '../assets/tanstack.png';
 import viteLogo from '/vite.svg';
 import { useTask } from '@/api/hooks/example.useTask.ts/useTask';
 
@@ -61,11 +62,7 @@ export default function Home() {
           target="_blank"
           className="hover:opacity-80 transition-opacity"
         >
-          <img
-            src={'https://tanstack.dev/_build/assets/splash-dark-8nwlc0Nt.png'}
-            className="h-24 w-24"
-            alt="React logo"
-          />
+          <img src={tanstack} className="h-24 w-24" alt="TanStack Query logo" />
         </a>
       </div>
       <h1 className="text-5xl font-bold mb-8">Vite + React + TanStack Query</h1>
